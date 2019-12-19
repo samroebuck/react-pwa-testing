@@ -1,0 +1,54 @@
+{
+  "name": "react-pwa-guide-kit",
+  "version": "1.0.0",
+  "description": "Progressive Web App with React.js",
+  "author": "ragingwind",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --https --hot",
+    "prestart": "opn https://0.0.0.0:8080 -- 'google chrome' --incognito --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://0.0.0.0:8080",
+    "build": "rm -rf build && webpack --mode=production",
+    "build:debug": "rm -rf build && webpack",
+    "deploy": "npm run build && firebase deploy",
+    "analyze": "webpack --mode=production --profile --json > ./node_modules/.bundle-data.json && webpack-bundle-analyzer ./node_modules/.bundle-data.json"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.3.0",
+    "@material-ui/icons": "^3.0.1",
+    "ejs": "^2.6.1",
+    "firebase": "^5.5.4",
+    "loadable-components": "^2.2.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-lite": "^0.15.39",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-imports": "^1.5.1",
+    "babel-preset-react-app-babel-7": "^4.0.2-0",
+    "copy-webpack-plugin": "^4.5.3",
+    "dotenv-safe": "^6.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inline-chunk-manifest-html-webpack-plugin": "^2.0.0",
+    "opn": "^5.4.0",
+    "opn-cli": "^3.1.0",
+    "preload-webpack-plugin": "^3.0.0-beta.2",
+    "react-hot-loader": "^4.3.11",
+    "sw-precache": "^5.2.1",
+    "sw-precache-webpack-plugin-loader": "^1.0.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.21.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "resolutions": {
+    "grpc": "^1.11.0"
+  }
+}
